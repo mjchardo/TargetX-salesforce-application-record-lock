@@ -10,6 +10,19 @@ This project implements a custom locking mechanism for Salesforce Application re
 Users can lock an Application by selecting the **Do Not Edit** checkbox. Once locked, changes to other editable fields are rejected.
 
 Users can unlock the Application by unchecking the checkbox and saving the record separately.
+<img width="732" height="418" alt="image" src="https://github.com/user-attachments/assets/30d8f795-455f-4fc8-a405-23ba1289f23c" />
+
+## User Story
+
+As a Salesforce Administrator, I need the ability to lock historical Application records from being modified by end users and
+integrations so that I can preserve historical enrollment data, maintain data integrity, and ensure accurate year-over-year reporting
+and dashboard comparisons.
+
+## Business Problem
+
+Historical Application records are subject to updates from Salesforce integrations and automated processes. These updates can
+unintentionally modify data from previous admission cycles, potentially compromising the accuracy of historical reporting and 
+year-over-year enrollment comparisons.
 
 ## Features
 
