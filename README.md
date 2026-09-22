@@ -93,6 +93,22 @@ This implementation targets a Salesforce environment with the TargetX Applicatio
 - Other automation may affect the final transaction.
 - Requires adaptation for environments without TargetX.
 
+## Why Apex Instead of a Validation Rule?
+
+A Salesforce Validation Rule was considered as an alternative for protecting historical Application records. However, the requirement to
+allow reversible locking while protecting all other editable fields presented a maintainability challenge.
+
+A validation rule would require explicitly identifying each protected field using ISCHANGED(). As new fields are introduced to the
+Application object, the rule would need to be manually updated to maintain comprehensive protection.
+
+An Apex trigger was implemented to dynamically retrieve eligible Application fields through Salesforce Schema and compare their previous
+and proposed values.
+
+This approach provides a scalable locking mechanism that supports evolving data models, prevents unauthorized modifications by users and
+integrations, and allows records to be unlocked when legitimate corrections are required.
+
+The solution helps preserve historical Application data used in year-over-year admissions reporting and dashboards.
+
 ## Author
 
 **Matthew Guichardo**
